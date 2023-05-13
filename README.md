@@ -1,2 +1,2 @@
 # Project---ETL
-Mini Projcet as aprt of Data Analyst Bootcamp UofT
+Mini Projcet as part of Data Analyst Bootcamp UofT
