@@ -58,7 +58,7 @@ REFERENCES subcategory (subcategory_id);
 COPY campaign FROM 'campaign.csv' DELIMITER ',' CSV HEADER;
 COPY category FROM 'category.csv' DELIMITER ',' CSV HEADER;
 COPY contacts FROM 'contacts.csv' DELIMITER ',' CSV HEADER;
-COPY subcategory FROM 'subcategory.csv' DELIMITER ',' HEADER;
+COPY subcategory FROM 'subcategory.csv' DELIMITER ',' CSV HEADER;
 
 SELECT * FROM category;
 SELECT * FROM subcategory;
