@@ -60,5 +60,10 @@ COPY category FROM 'category.csv' DELIMITER ',' CSV HEADER;
 COPY contacts FROM 'contacts.csv' DELIMITER ',' CSV HEADER;
 COPY subcategory FROM 'subcategory.csv' DELIMITER ',' HEADER;
 
+SELECT * FROM category;
+SELECT * FROM subcategory;
+SELECT * FROM contacts;
+SELECT * FROM campaign;
+
 
 
