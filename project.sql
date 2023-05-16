@@ -1,6 +1,7 @@
 -- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
 -- Link to schema: https://app.quickdatabasediagrams.com/#/d/FHHizB
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
+CREATE DATABASE crowdfunding_db;
 
 
 CREATE TABLE category (
@@ -53,4 +54,11 @@ REFERENCES category (category_id);
 
 ALTER TABLE campaign ADD CONSTRAINT fk_campaign_subcategory_id FOREIGN KEY(subcategory_id)
 REFERENCES subcategory (subcategory_id);
+
+COPY campaign FROM 'campaign.csv' DELIMITER ',' CSV HEADER;
+COPY category FROM 'category.csv' DELIMITER ',' CSV HEADER;
+COPY contacts FROM 'contacts.csv' DELIMITER ',' CSV HEADER;
+COPY subcategory FROM 'subcategory.csv' DELIMITER ',' HEADER;
+
+
 
