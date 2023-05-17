@@ -1,5 +1,14 @@
+--delete database if it exists
+DROP DATABASE IF EXISTS crowdfunding_db;
+--Create Database
 CREATE DATABASE crowdfunding_db;
+--Drop Table if exists
+DROP TABLE IF EXISTS category CASCADE;
+DROP TABLE IF EXISTS subcategory CASCADE;
+DROP TABLE IF EXISTS contacts CASCADE;
+DROP TABLE IF EXISTS campaign CASCADE;
 
+--Create Tables
 CREATE TABLE category (
     category_id VARCHAR   NOT NULL,
     category VARCHAR   NOT NULL,
@@ -40,12 +49,13 @@ CREATE TABLE campaign (
     FOREIGN KEY(category_id) REFERENCES category (category_id),
     FOREIGN KEY(subcategory_id) REFERENCES subcategory (subcategory_id)
 );
-
+--import CSV files into tables
 COPY campaign FROM 'campaign.csv' DELIMITER ',' CSV HEADER;
 COPY category FROM 'category.csv' DELIMITER ',' CSV HEADER;
 COPY contacts FROM 'contacts.csv' DELIMITER ',' CSV HEADER;
 COPY subcategory FROM 'subcategory.csv' DELIMITER ',' CSV HEADER;
 
+-- SELECT all rows from tables
 SELECT * FROM category;
 SELECT * FROM subcategory;
 SELECT * FROM contacts;
